@@ -24,6 +24,7 @@ usersRouter.post('/register', (request: Request, response: Response) => {
           })
           await user.save().then((r) => {
             console.log('Response from db', r)
+            response.status(200).json({ user: { id: r._id, email: r.email } })
           })
         }
       })

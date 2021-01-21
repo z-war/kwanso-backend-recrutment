@@ -40,7 +40,7 @@ passport.use(
     },
     function (jwtToken, done) {
       User.findOne(
-        { email: jwtToken.user.email },
+        { email: jwtToken?.user?.email },
         function (err: any, user: any) {
           if (err) {
             console.log('err', err)
